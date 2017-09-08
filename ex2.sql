@@ -26,3 +26,25 @@ INSERT INTO Clients (id, name, lastname, gender, contry, city, yearbirth, Accoun
 ('18', 'Olia', 'Broun', 'w', 'Ukraine', 'Doneck', '1945', '21000', 'Yes'),
 ('19', 'Marta', 'Woodpeker', 'w', 'Ukraine', 'Odessa', '1968', '2000', 'Yes'),
 ('20', 'Olimpia', 'Oil', 'm', 'Greate Britain', 'London', '2000', '3000', 'Yes');
+
+select count(*) from Clients;
+
+select count (*) from Clients where gender  = 'w';
+
+select yearbirth, count(*) from Clients group by yearbirth;
+
+select yearbirth, count (*) from Clients where yearbirth > 1980 group by yearbirth;
+
+select SUM(Account) from Clients;
+
+select contry, SUM(Account) from Clients group by contry;
+
+select MAX(Account) from Clients;
+
+SELECT AVG(yearbirth) FROM Clients;
+
+SELECT yearbirth, ROUND(AVG(Account), 2) FROM Clients GROUP BY yearbirth;
+
+SELECT Clients.name, Clients.yearbirth FROM Clients;
+
+SELECT * FROM Clients JOIN shop ON Clients.id = shop.id;
